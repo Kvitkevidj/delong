@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
+
+<head>
     <meta charset="utf-8">
     <script src="js/items.js" language="javascript"></script>
     <title>DЭЛОНГ</title>
@@ -25,10 +26,26 @@
             </nav>
         </header>
         <main class="container">
-            <nav>
-                <a href="buy_logo.html">Купить</a>
-                <a href="sell_1.html">Продать</a>
-            </nav>
+            <header>
+                <nav class="main-nav">
+                    <ul class="main-menu">
+                        <li><a class="active" href="buy_logo.html">Лого</a></li>
+                        <li><a href="buy_mark.html">Марка</a></li>
+                        <li><a href="buy_category.html">Категория</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section class="items">
+                <div class="search-btn">
+                    <a class="items-btn" href="#">Поиск гостиницы в Седоне</a>
+                </div>
+                <div class="items-block">
+                    <p class="search-item">
+                        <label for="check-in">Дата заезда</label>
+                        <input class="calendar-icon" id="check-in" type="text" name="date" value="" placeholder="24 апреля 2017">
+                    </p>
+                </div>
+            </section>
         </main>
         <footer class="footer">
             <img src="img/footer-logo.png" width="70" height="" all="Логотип ООО ДЭЛОНГ (маленький)" />
@@ -48,5 +65,17 @@
             </div>
         </footer>
     </div>
+     <script>
+            var link = document.querySelector(".items-btn");
+            var popup = document.querySelector(".items-block");
+            var close = popup.querySelector(".items-btn");
+            
+            link.addEventListener("click", function (evt) {
+                console.log("Вывод");
+                evt.preventDefault();
+                popup.classList.toggle("items-show");
+            });
+        </script>
 </body>
+
 </html>
